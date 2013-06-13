@@ -14,6 +14,10 @@ class Sprite(object):
     def area(self):
         return self.width * self.height
 
+    @property
+    def circumference(self):
+        return self.width + self.height
+
     def __repr__(self):
         return "Sprite({name!r}, {width}, {height})".format(**self.__dict__)
 
@@ -47,11 +51,11 @@ def sort_name(r):
 
 
 def sort_area(r):
-    return r.width * r.height
+    return r.area
 
 
 def sort_circumference(r):
-    return r.width + r.height
+    return r.circumference
 
 
 def sort_maxside(r):
