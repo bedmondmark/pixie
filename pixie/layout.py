@@ -20,10 +20,18 @@ class Sprite(object):
 
     @property
     def area(self):
+        """
+        The area covered by the sprite's bounding rectangle.
+        """
         return self.width * self.height
 
     @property
     def circumference(self):
+        """
+        The sum of width and height.
+
+        Note that this is not ACTUALLY the circumference!
+        """
         return self.width + self.height
 
     def __repr__(self):
@@ -56,30 +64,54 @@ class Layout(object):
 # Sorting key functions -------------------------------------------------------
 
 def sort_width(r):
+    """
+    A key function for sorting Sprites by their width attribute.
+    """
     return r.width
 
 
 def sort_height(r):
+    """
+    A key function for sorting Sprites by their height attribute.
+    """
     return r.height
 
 
 def sort_name(r):
+    """
+    A key function for sorting Sprites by their name attribute.
+    """
     return r.name
 
 
 def sort_area(r):
+    """
+    A key function for sorting Sprites by their area property.
+    """
     return r.area
 
 
 def sort_circumference(r):
+    """
+    A key function for sorting Sprites by their circumference property.
+    """
     return r.circumference
 
 
 def sort_maxside(r):
+    """
+    A key function for sorting Sprites by the longest of their two sides.
+    """
     return max(r.width, r.height)
 
 
 def sort_sprites(sprites, sort_type):
+    """
+    A utility function for sorting a list of Sprite instances.
+
+    sort_sprite should be one of 'width', 'height', 'name', 'area',
+    'circumference', or 'maxside'
+    """
     sort_func = globals()['sort_' + sort_type]
     return sorted(sprites, key=sort_func, reverse=sort_type != 'name')
 
@@ -87,6 +119,10 @@ def sort_sprites(sprites, sort_type):
 # Layout functions ------------------------------------------------------------
 
 def layout_horizontal(sprites):
+    """
+    Return a Layout containing the provided sprites laid out
+    linearly horizontally.
+    """
     result = Layout()
     for sprite in sprites:
         result.sprite_positions.append(SpritePosition(sprite, result.width, 0))
@@ -96,6 +132,10 @@ def layout_horizontal(sprites):
 
 
 def layout_vertical(sprites):
+    """
+    Return a Layout containing the provided sprites laid out
+    linearly vertically.
+    """
     result = Layout()
     for sprite in sprites:
         result.sprite_positions.append(
