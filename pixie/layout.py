@@ -4,13 +4,14 @@
 pixie.layout - Generic code for sorting and laying out sprites
 """
 
+
 class Sprite(object):
     """
     An image, or similar object, to be packed by Pixie.
 
-    This class is designed to be subclassed by each adapter to provide necessary
-    functionality for loading images, querying, trimming and generating the
-    resulting atlas.
+    This class is designed to be subclassed by each adapter to provide
+    necessary functionality for loading images, querying, trimming and
+    generating the resulting atlas.
     """
     def __init__(self, name, width, height):
         self.width = width
@@ -79,7 +80,7 @@ def sort_maxside(r):
 
 
 def sort_sprites(sprites, sort_name):
-    sort_func = globals()['sort_'+sort_name]
+    sort_func = globals()['sort_' + sort_name]
     return sorted(sprites, key=sort_func, reverse=sort_name != 'name')
 
 
