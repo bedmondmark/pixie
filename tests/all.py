@@ -10,9 +10,9 @@ import unittest
 if __name__ == '__main__':
     sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
-    from layout import *
-    from pillow_adapter import *
-    from main import *
-    from runner import *
+    from test_layout import *
+    from test_pillow_adapter import *
+    from test_main import *
+    from test_runner import *
 
     unittest.main()
