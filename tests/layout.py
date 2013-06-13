@@ -3,12 +3,14 @@ import sys
 import unittest
 
 
-class SpriteSortingTestCase(unittest.TestCase):
+class LayoutTestCase(unittest.TestCase):
     @property
     def _layout(self):
         import pixie.layout
         return pixie.layout
 
+
+class SpriteSortingTestCase(LayoutTestCase):
     def setUp(self):
         self.wide = self._layout.Sprite('wide', 20, 5)
         self.high = self._layout.Sprite('high', 4, 22)
@@ -66,11 +68,7 @@ class SpriteSortingTestCase(unittest.TestCase):
         )
 
 
-class SpriteTestCase(unittest.TestCase):
-    @property
-    def _layout(self):
-        import pixie.layout
-        return pixie.layout
+class SpriteTestCase(LayoutTestCase):
 
     def test_init(self):
         layout = self._layout
@@ -91,11 +89,7 @@ class SpriteTestCase(unittest.TestCase):
         self.assertEqual("Sprite(\'_\', 3, 4)", repr(s))
 
 
-class SpritePositionTestCase(unittest.TestCase):
-    @property
-    def _layout(self):
-        import pixie.layout
-        return pixie.layout
+class SpritePositionTestCase(LayoutTestCase):
 
     def test_init(self):
         layout = self._layout
@@ -108,11 +102,7 @@ class SpritePositionTestCase(unittest.TestCase):
         equal(0, sp.y)
 
 
-class LayoutTestCase(unittest.TestCase):
-    @property
-    def _layout(self):
-        import pixie.layout
-        return pixie.layout
+class LayoutTestCase(LayoutTestCase):
 
     def test_init(self):
         layout = self._layout
@@ -123,11 +113,7 @@ class LayoutTestCase(unittest.TestCase):
         equal(0, len(l.sprite_positions))
 
 
-class layout_TestCase(unittest.TestCase):
-    @property
-    def _layout(self):
-        import pixie.layout
-        return pixie.layout
+class layout_TestCase(LayoutTestCase):
 
     def test_layout_horizontal(self):
         equal = self.assertEqual
