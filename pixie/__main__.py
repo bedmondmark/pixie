@@ -6,9 +6,10 @@ import os
 import sys
 
 
-if __name__ == '__main__':
-    # Hack to allow pixie module to be loaded during development:
-    sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+# Hack to allow pixie module to be loaded during development:
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from pixie import runner
 
-    from pixie import runner
+
+if __name__ == '__main__':
     runner.main()

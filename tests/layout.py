@@ -102,7 +102,7 @@ class SpritePositionTestCase(LayoutTestCase):
         equal(0, sp.y)
 
 
-class LayoutTestCase(LayoutTestCase):
+class LayoutClassTestCase(LayoutTestCase):
 
     def test_init(self):
         layout = self._layout
