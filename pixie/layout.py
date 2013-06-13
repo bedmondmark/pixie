@@ -5,6 +5,13 @@ pixie.layout - Generic code for sorting and laying out sprites
 """
 
 class Sprite(object):
+    """
+    An image, or similar object, to be packed by Pixie.
+
+    This class is designed to be subclassed by each adapter to provide necessary
+    functionality for loading images, querying, trimming and generating the
+    resulting atlas.
+    """
     def __init__(self, name, width, height):
         self.width = width
         self.height = height
@@ -23,6 +30,11 @@ class Sprite(object):
 
 
 class SpritePosition(object):
+    """
+    A SpritePosition a Sprite positioned for packing.
+
+    This class is used to provide output from the various layout functions.
+    """
     def __init__(self, sprite, x, y):
         self.sprite = sprite
         self.x = x
@@ -30,6 +42,10 @@ class SpritePosition(object):
 
 
 class Layout(object):
+    """
+    A Layout instance is returned by the various layout functions. It contains
+    all of the information necessary to provide an output bitmap and atlas.
+    """
     def __init__(self):
         self.width = 0
         self.height = 0
