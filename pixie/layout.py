@@ -12,7 +12,7 @@ class Sprite(object):
         return self.width * self.height
 
     def __repr__(self):
-        return "Sprite({name}, {width}, {height})".format(**self.__dict__)
+        return "Sprite({name!r}, {width}, {height})".format(**self.__dict__)
 
 
 class SpritePosition(object):
@@ -67,6 +67,7 @@ def layout_horizontal(sprites):
     for sprite in sprites:
         result.sprite_positions.append(SpritePosition(sprite, result.width, 0))
         result.width += sprite.width
+        result.height = max(result.height, sprite.height)
     return result
 
 
@@ -75,5 +76,6 @@ def layout_vertical(sprites):
     for sprite in sprites:
         result.sprite_positions.append(SpritePosition(sprite, 0, result.height))
         result.height += sprite.height
+        result.width = max(result.width, sprite.width)
     return result
 
