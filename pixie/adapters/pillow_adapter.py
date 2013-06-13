@@ -22,12 +22,14 @@ class PillowSprite(Sprite):
         # TODO: All of these attributes should also instantiated in Sprite
         self.path = path
         self.image = image.open(path)
-        self.width = self.image.size[0]
-        self.height = self.image.size[1]
-        self.trimmed = False
+        width = self.image.size[0]
+        height = self.image.size[1]
+        super(PillowSprite, self).__init__(path, width, height)
         self.trim_offsets = None
-        self.original_width = self.width
-        self.original_height = self.height
+
+    @property
+    def trimmed(self):
+        return self.trim_offsets is not None
 
     def trim(self):
         """
@@ -36,7 +38,6 @@ class PillowSprite(Sprite):
         if not self.trimmed:
             self.image, off = _trim(self.image)
             if off:
-                self.trimmed = True
                 self.original_width = self.width
                 self.original_height = self.height
                 self.width = off[2] - off[0]
@@ -44,7 +45,7 @@ class PillowSprite(Sprite):
                 self.trim_offsets = off
 
 
-def _trim(im):
+def _trim(original):
     """
     Trim the provided image `im`.
 
@@ -52,11 +53,11 @@ def _trim(im):
     (x, y, w, h) tuple of the cropped area, or None if the image could not
     be trimmed.
     """
-    channels = im.split()
+    channels = original.split()
     if len(channels) != 4:
-        return im, None
+        return original, None
     crop_area = channels[3].getbbox()
-    return im.crop(crop_area), crop_area
+    return original.crop(crop_area), crop_area
 
 
 def load(path):

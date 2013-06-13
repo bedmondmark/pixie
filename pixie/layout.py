@@ -14,8 +14,8 @@ class Sprite(object):
     generating the resulting atlas.
     """
     def __init__(self, name, width, height):
-        self.width = width
-        self.height = height
+        self.original_width = self.width = width
+        self.original_height = self.height = height
         self.name = name
 
     @property
@@ -79,9 +79,9 @@ def sort_maxside(r):
     return max(r.width, r.height)
 
 
-def sort_sprites(sprites, sort_name):
-    sort_func = globals()['sort_' + sort_name]
-    return sorted(sprites, key=sort_func, reverse=sort_name != 'name')
+def sort_sprites(sprites, sort_type):
+    sort_func = globals()['sort_' + sort_type]
+    return sorted(sprites, key=sort_func, reverse=sort_type != 'name')
 
 
 # Layout functions ------------------------------------------------------------
