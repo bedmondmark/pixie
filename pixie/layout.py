@@ -17,6 +17,7 @@ class Sprite(object):
         self.original_width = self.width = width
         self.original_height = self.height = height
         self.name = name
+        self.trim_offsets = None
 
     @property
     def area(self):
@@ -63,46 +64,46 @@ class Layout(object):
 
 # Sorting key functions -------------------------------------------------------
 
-def sort_width(r):
+def sort_width(sprite):
     """
     A key function for sorting Sprites by their width attribute.
     """
-    return r.width
+    return sprite.width
 
 
-def sort_height(r):
+def sort_height(sprite):
     """
     A key function for sorting Sprites by their height attribute.
     """
-    return r.height
+    return sprite.height
 
 
-def sort_name(r):
+def sort_name(sprite):
     """
     A key function for sorting Sprites by their name attribute.
     """
-    return r.name
+    return sprite.name
 
 
-def sort_area(r):
+def sort_area(sprite):
     """
     A key function for sorting Sprites by their area property.
     """
-    return r.area
+    return sprite.area
 
 
-def sort_circumference(r):
+def sort_circumference(sprite):
     """
     A key function for sorting Sprites by their circumference property.
     """
-    return r.circumference
+    return sprite.circumference
 
 
-def sort_maxside(r):
+def sort_maxside(sprite):
     """
     A key function for sorting Sprites by the longest of their two sides.
     """
-    return max(r.width, r.height)
+    return max(sprite.width, sprite.height)
 
 
 def sort_sprites(sprites, sort_type):

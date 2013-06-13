@@ -11,10 +11,16 @@ import sys
 
 
 def parse_args(argv):
+    """
+    Parse argv and return an argparse Namespace.
+    """
     parser = argparse.ArgumentParser()
 
     return parser.parse_args(argv)
 
 
 def main(argv=sys.argv[1:]):
+    """
+    Entry-point for running the Pixie command-line.
+    """
     print parse_args(argv)

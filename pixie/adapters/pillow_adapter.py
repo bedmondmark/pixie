@@ -16,24 +16,25 @@ class PillowSprite(Sprite):
     A pillow-specific subclass of Sprite.
 
     On instantiation, this class will load the image at `path` and inspect the
-    image data in order to populate the various Sprite attributes
+    image data in order to populate the various Sprite attributes.
     """
     def __init__(self, path):
-        # TODO: All of these attributes should also instantiated in Sprite
         self.path = path
         self.image = image.open(path)
         width = self.image.size[0]
         height = self.image.size[1]
         super(PillowSprite, self).__init__(path, width, height)
-        self.trim_offsets = None
 
     @property
     def trimmed(self):
+        """
+        A boolean, indicating whether this Sprite has been trimmed or not.
+        """
         return self.trim_offsets is not None
 
     def trim(self):
         """
-        Attempt to trim the image encapsulated by this Sprite
+        Attempt to trim the image encapsulated by this Sprite.
         """
         if not self.trimmed:
             self.image, off = _trim(self.image)
@@ -47,7 +48,7 @@ class PillowSprite(Sprite):
 
 def _trim(original):
     """
-    Trim the provided image `im`.
+    Trim the provided image `original`.
 
     This function returns a 2-tuple containing the cropped image and the
     (x, y, w, h) tuple of the cropped area, or None if the image could not
