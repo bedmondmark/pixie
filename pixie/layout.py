@@ -74,8 +74,8 @@ def layout_horizontal(sprites):
 def layout_vertical(sprites):
     result = Layout()
     for sprite in sprites:
-        result.sprite_positions.append(SpritePosition(sprite, 0, result.height))
+        result.sprite_positions.append(
+            SpritePosition(sprite, 0, result.height))
         result.height += sprite.height
         result.width = max(result.width, sprite.width)
     return result
-

@@ -2,6 +2,7 @@
 
 from __future__ import absolute_import
 
+
 def trim_demo():
     "Temporary function - just an experiment."
     from PIL import Image as image
@@ -11,6 +12,7 @@ def trim_demo():
     print im.getbbox()
     im = im.crop(im.getbbox())
     im.show()
+
 
 # Temporary code:
 if __name__ == '__main__':
