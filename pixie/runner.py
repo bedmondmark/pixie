@@ -6,9 +6,11 @@ import argparse
 import sys
 
 
-def main(argv=sys.argv[1:]):
+def parse_args(argv):
     parser = argparse.ArgumentParser()
 
-    options = parser.parse_args(argv)
+    return parser.parse_args(argv)
 
-    print options
+
+def main(argv=sys.argv[1:]):
+    print parse_args(argv)

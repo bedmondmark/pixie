@@ -13,5 +13,6 @@ if __name__ == '__main__':
     from layout import *
     from pillow_adapter import *
     from main import *
+    from runner import *
 
     unittest.main()
