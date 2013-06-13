@@ -49,6 +49,14 @@ class SpriteSortingTestCase(unittest.TestCase):
             list(layout.sort_sprites(self.all, 'circumference'))
         )
 
+    def test_sort_maxside(self):
+        layout = self._layout
+
+        self.assertSequenceEqual(
+            [self.high, self.wide, self.big, self.small],
+            list(layout.sort_sprites(self.all, 'maxside'))
+        )
+
     def test_sort_name(self):
         layout = self._layout
 

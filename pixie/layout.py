@@ -51,10 +51,16 @@ def sort_circumference(r):
     return r.width + r.height
 
 
+def sort_maxside(r):
+    return max(r.width, r.height)
+
+
 def sort_sprites(sprites, sort_name):
     sort_func = globals()['sort_'+sort_name]
     return sorted(sprites, key=sort_func, reverse=sort_name != 'name')
 
+
+# Layout functions ------------------------------------------------------------
 
 def layout_horizontal(sprites):
     result = Layout()
