@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
 
+"""
+pixie.adapters.pillow_adapter - Adapter that uses pillow for image manipulation
+"""
+
 from __future__ import absolute_import
 
 from PIL import Image as image

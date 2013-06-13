@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
 
+"""
+pixie.__main__ - Run the Pixie CLI from the pixie package
+"""
+
 from __future__ import absolute_import
 
 import os

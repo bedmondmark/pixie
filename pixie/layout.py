@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 
+"""
+pixie.layout - Generic code for sorting and laying out sprites
+"""
 
 class Sprite(object):
     def __init__(self, name, width, height):

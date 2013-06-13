@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
 
+"""
+pixie.runner - Command-line driver for Pixie
+"""
+
 from __future__ import absolute_import
 
 import argparse
