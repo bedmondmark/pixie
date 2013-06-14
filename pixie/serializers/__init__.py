@@ -15,12 +15,12 @@ def _sprite_position_json(sprite_position):
     TexturePacker output.
     """
     return {
-        "filename": sprite_position.name,
+        "filename": sprite_position.sprite.name,
         "frame": {
             "x": sprite_position.x,
             "y": sprite_position.y,
-            "w": sprite_position.width,
-            "h": sprite_position.height
+            "w": sprite_position.sprite.width,
+            "h": sprite_position.sprite.height
         },
         "rotated": False,
         "trimmed": sprite_position.sprite.trimmed,
