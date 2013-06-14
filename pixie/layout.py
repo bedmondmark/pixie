@@ -4,7 +4,6 @@
 pixie.layout - Generic code for sorting and laying out sprites
 """
 
-
 class Sprite(object):
     """
     An image, or similar object, to be packed by Pixie.
@@ -18,6 +17,27 @@ class Sprite(object):
         self.original_height = self.height = height
         self.name = name
         self.trim_offsets = None
+
+    @property
+    def sprite_source_size(self):
+        """
+        A dict of x, y, width and height of the trimmed area within the
+        original image.
+        """
+        if self.trimmed:
+            return {
+                'x': self.trim_offsets[0],
+                'y': self.trim_offsets[1],
+                'w': self.trim_offsets[2] - self.trim_offsets[0],
+                'h': self.trim_offsets[3] - self.trim_offsets[1],
+            }
+        else:
+            return {
+                'x': 0,
+                'y': 0,
+                'w': self.width,
+                'h': self.height
+            }
 
     @property
     def area(self):
