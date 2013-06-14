@@ -2,7 +2,7 @@
 
 {
 	"filename": "Slice 1.png",
-	"frame": {"x":680,"y":226,"w":121,"h":121},
+	"frame": {"x":834,"y":0,"w":121,"h":121},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":40,"y":40,"w":121,"h":121},
@@ -10,7 +10,7 @@
 },
 {
 	"filename": "Slice 2.png",
-	"frame": {"x":680,"y":64,"w":160,"h":160},
+	"frame": {"x":674,"y":0,"w":160,"h":160},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":20,"y":20,"w":160,"h":160},
@@ -18,7 +18,7 @@
 },
 {
 	"filename": "Slice 3.png",
-	"frame": {"x":558,"y":2,"w":360,"h":60},
+	"frame": {"x":955,"y":0,"w":360,"h":60},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":20,"y":60,"w":360,"h":60},
@@ -26,7 +26,7 @@
 },
 {
 	"filename": "Slice 4.png",
-	"frame": {"x":558,"y":64,"w":120,"h":340},
+	"frame": {"x":554,"y":0,"w":120,"h":340},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":40,"y":20,"w":120,"h":340},
@@ -34,7 +34,7 @@
 },
 {
 	"filename": "opaque.jpg",
-	"frame": {"x":2,"y":2,"w":554,"h":422},
+	"frame": {"x":0,"y":0,"w":554,"h":422},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":554,"h":422},
@@ -45,8 +45,8 @@
 	"version": "1.0",
 	"image": "tp_sample.png",
 	"format": "RGBA8888",
-	"size": {"w":920,"h":426},
+	"size": {"w":1315,"h":422},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:053c01f508177c788ea5f4a51e635425$"
+	"smartupdate": "$TexturePacker:SmartUpdate:d6b2bc2fb226b8db997d05177a05e9f7$"
 }
 }
